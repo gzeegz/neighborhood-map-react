@@ -1,0 +1,122 @@
+html, body, #app {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+#sidebar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  height: calc(100% - 50px);
+  left: -275px;
+  transition: left .3s ease-in-out;
+  z-index: 1;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
+#map {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: calc(100% - 50px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#map.open {
+  left: 275px;
+}
+
+#sidebar .panel {
+  margin: 0;
+}
+
+.sidebar-list {
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.sidebar-list li:first-child {
+  border-top: none;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+
+.has-feedback .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+#sidebar .input-group {
+  width: 100%;
+}
+
+.list-group-item {
+  cursor: pointer;
+  padding: 7px 10px 7px 10px;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+.selected {
+  background: #dfeef8;
+}
+
+.mapboxgl-marker {
+    background-image: url('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.place-name {
+  color: #ff5722;
+  margin: 5px 0;
+}
+
+.place-category, .place-tip-user {
+  color: #909496;
+  font-size: 0.9em;
+  margin-bottom: 3px;
+}
+
+.place-tip-label {
+  margin: 5px 0;
+}
+
+.list-group-item address {
+  margin-bottom: 15px;
+}
+
+.mapboxgl-popup-content address {
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-brand {
+    font-size: 18px;
+  }
+}
